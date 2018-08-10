@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
   const pathName = url.parse(req.url).pathname;
 
   // Get method.
-  const httpMethod = req.method.toLocaleLowerCase();
+  const httpMethod = req.method.toLowerCase();
 
   // Set content-type
   res.setHeader('content-type', 'application/json');
@@ -18,7 +18,7 @@ const server = http.createServer((req, res) => {
   // Declare greeting.
   let greeting = '';
 
-  // Reply if path matches /hello and http method is post.
+  // Set greeting if request matches /hello path and http method is post.
   if (pathName === '/hello' && httpMethod === 'post') {
     greeting = JSON.stringify({
       'message' : 'Greetings earthling, and hello world!',
